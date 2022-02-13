@@ -2,6 +2,7 @@
 ![Powered by](https://img.shields.io/badge/Based_on-Pytorch-blue?logo=pytorch)
 ![GitHub repo size](https://img.shields.io/github/repo-size/SunnyHaze/LeNet5-Pytorch?logo=hack%20the%20box)
 ![GitHub](https://img.shields.io/github/license/Sunnyhaze/LeNet5-Pytorch?logo=license)
+
 本文使用Pytorch构建了经典的LeNet-5网络，并提供了一个预训练模型与结果。
 
 同时本文也提供了一个下载、解压、重构原始数据集的自动化脚本，便于自行体验模型训练过程。
@@ -14,7 +15,8 @@ LeNet-5是Yann LeCun巨佬在1998年就提出的卷积神经网络模型，非�
 LeNet-5网络很小，但是包含了图像识别方向深度学习的基本模块，卷积层，池化层（此时还仅称为下采样层（subsampling），AlexNet模型诞生后才称作池化层）全连接层。是其他深度学习模型的基础。
 
 + 网络结构
-  ![](\images/Architecture.jpg)
+
+  ![](/images/Architecture.jpg)
 
 具体的网络结构解释已经有很多大佬写过文章，本文也在代码中做了浅显的解释，请自行查阅。
 ## 本仓库简介
@@ -39,10 +41,13 @@ LeNet-5网络很小，但是包含了图像识别方向深度学习的基本模�
 
 >虽然数据集的大小变大了不少，但是运算时间大幅降低！也就是下面定义的类的主要功能：
 【读取高度压缩的字节码文件，并转化为GPU喜闻乐见的形式保存】
-（具体的字节码如何组织的，可以参考http://yann.lecun.com/exdb/mnist/ 网页页最下面的说明）
+（具体的字节码如何组织的，可以参考http://yann.lecun.com/exdb/mnist/ 网页最下面的说明）
 ### 效果评估
-整体运行的准确率与巨佬论文中提供的`Error Rate`基本匹配，但是也偶见一些状态模型的准确率始终不下降，可能是因为随机初始化运气不好，无法收敛。
+整体运行的准确率与巨佬论文中提供的`Error Rate`基本匹配，但是也偶见一些状态模型的准确率始终不下降。推测可能是因为随机初始化运气不好，无法收敛。
 + 我的模型的`准确率`
+
   ![](Train.jpg)
+  
 + 大佬原文的`Error Rate`和一些小问题的解释原因
+
   ![](images/PaperErrorRate.png)
