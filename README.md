@@ -1,9 +1,11 @@
-# 基于Pytorch复现LeNet-5
+# 基于Pytorch复现LeNet-5在MNIST数据集的实现
 ![Powered by](https://img.shields.io/badge/Based_on-Pytorch-blue?logo=pytorch)
 ![GitHub repo size](https://img.shields.io/github/repo-size/SunnyHaze/LeNet5-Pytorch?logo=hack%20the%20box)
 ![GitHub](https://img.shields.io/github/license/Sunnyhaze/LeNet5-Pytorch?logo=license)
 
-本文使用Pytorch构建了经典的LeNet-5网络，并提供了一个预训练模型与结果。
+本文使用Pytorch构建了经典的LeNet-5网络，数据集为[MNIST数据集](http://yann.lecun.com/exdb/mnist/)，并提供了一个预训练模型与结果。
+
+>MNIST数据集是一个非常经典的手写体数字识别数据集。
 
 同时本文也提供了一个下载、解压、重构原始数据集的自动化脚本，便于自行体验模型训练过程。
 ## LeNet-5简介
