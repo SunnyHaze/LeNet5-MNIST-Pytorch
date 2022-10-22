@@ -3,36 +3,31 @@ import os
 from time import sleep
 from turtle import forward
 from matplotlib.pyplot import imshow
-from ReadData import *
 import torch
 from torch.utils.data import Dataset, DataLoader, TensorDataset
 from torch import conv2d, nn, sigmoid, tensor
 import numpy as np
 from imports.ParametersManager import *
-rawDataName = {"trainX" : "train-images.idx3-ubyte",
-               "trainY" : "train-labels.idx1-ubyte",
-               "testX" : "t10k-images.idx3-ubyte",
-               "testY" : "t10k-labels.idx1-ubyte"
-               }
+
 # 超参数
 BatchSize = 10
 LEARNINGRATE = 0.005
-epochNums = 1
+epochNums = 30
 SaveModelEveryNEpoch = 2 # 每执行多少次保存一个模型
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # 初始化数据转换器，通过索引访问
-trainXreader = imgReader(rawDataName["trainX"])
-testXreader = imgReader(rawDataName["testX"])
-trainYreader = labelReader(rawDataName["trainY"])
-testYreader = labelReader(rawDataName["testY"])
+# trainXreader = imgReader(rawDataName["trainX"])
+# testXreader = imgReader(rawDataName["testX"])
+# trainYreader = labelReader(rawDataName["trainY"])
+# testYreader = labelReader(rawDataName["testY"])
 
 # 可以将数据线包装为Dataset，然后传入DataLoader中取样
 class MyDataset(Dataset):
     def __init__(self,SetType) -> None:
         with open(SetType + 'img.npy','rb') as f:
-            self.images =torch.tensor(np.load(f), dtype=torch.float32)
+            self.images =torch.tensor(np.load(f, allow_pickle=True), dtype=torch.float32)
         with open(SetType + 'Label.npy','rb') as f:
-            tmp = np.load(f)
+            tmp = np.load(f, allow_pickle=True)
             print(tmp)
         self.labels=[]
         for num in tmp:

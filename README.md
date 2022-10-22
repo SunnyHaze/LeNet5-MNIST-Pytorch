@@ -25,7 +25,7 @@ LeNet-5网络很小，但是包含了图像识别方向深度学习的基本模�
 ### 目录结构
 - [LeNet-5_GPU.py](LeNet-5_GPU.py) 是主要的模型与训练逻辑文件脚本。
 - [/imports/ParametersManager.py](imports/ParametersManager.py) 是主要用于保存训练过程中的各种参数到文件的“控制器”。主模型文件中引用了这个包。
-- [Download&UnzipData.py](Download&UnzipData.py) 是用于自动化下载原始数据集并解压到文件的脚本
+- [DownloadUnzipData.py](DownloadUnzipData.py) 是用于自动化下载原始数据集并解压到文件的脚本
 - [model.pt](model.pt) 是已经预训练到准确率98%以上的模型文件，目前已经训练了31个Epoch
 - [viewModel.py](viewModel.py) 是直接查看当前模型准确率的脚本，需要在目录中存在`model.pt`才能正常运行
 

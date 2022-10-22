@@ -1,9 +1,9 @@
 CNN.py
 __pycache__
 test.py
-*-idx3-ubyte
-*-idx1-ubyte
-*.idx3-ubyte
-*.idx1-ubyte
+*-idx3-ubyte*
+*-idx1-ubyte*
+*.idx3-ubyte*
+*.idx1-ubyte*
 *.npy
 ReadData.py

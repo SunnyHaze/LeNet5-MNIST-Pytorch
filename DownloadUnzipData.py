@@ -2,6 +2,7 @@ import struct
 import matplotlib.pyplot as plt
 import numpy as np
 import requests , gzip
+from tqdm import tqdm
 # 需要下载的文件名
 fileNames = [
     'train-images-idx3-ubyte.gz',
@@ -124,9 +125,7 @@ class labelReader:
 def saveAsNpy(reader,fileName):
     with open(fileName,'wb') as f:
         data = []
-        for i in range(len(reader)):
-            if i % 100 == 0:
-                print('{:.2f}%'.format(i/len(reader) * 100))
+        for i in tqdm(range(len(reader))):
             data.append(reader[i])
         data = np.array(data)
         print('Done!')
