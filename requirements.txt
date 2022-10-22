@@ -1,0 +1,4 @@
+tqdm
+requests
+numpy
+matplotlib

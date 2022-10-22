@@ -1,11 +1,7 @@
-from asyncio.windows_events import NULL
 import os
-from time import sleep
-from turtle import forward
 from matplotlib.pyplot import imshow
 import torch
 from torch.utils.data import Dataset, DataLoader, TensorDataset
-from torch import conv2d, nn, sigmoid, tensor
 import numpy as np
 from imports.ParametersManager import *
 
